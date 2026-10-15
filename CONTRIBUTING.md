@@ -7,7 +7,7 @@ Mỗi người chọn một cụm trong [bảng phân công](docs/chia-viec.md) 
 3. Có ví dụ nhỏ và kết quả để người đọc nhìn được thuật toán.
 4. Push phần đã làm lên repo. Nếu mở PR, người làm có thể tự merge; không yêu cầu reviewer.
 
-Tự viết logic chính, dùng thư viện hỗ trợ; chạy được và giải thích được. Có thể dùng AI hỗ trợ, người làm chịu trách nhiệm phần của mình.
+Tự cài logic chính của tất cả bài; dùng thư viện hỗ trợ mảng, phép toán cơ bản, đọc/ghi và hiển thị. Mỗi bài có thể dùng mức low-level khác nhau, miễn chạy được và giải thích được. Có thể dùng AI hỗ trợ, người làm chịu trách nhiệm phần của mình.
 
 Dùng số có dấu/số thực khi tính trung gian. Theo ghi chú lớp: padding mặc định 0, k-nearest hòa khoảng cách ưu tiên mức xám lớn hơn; làm tròn theo bài đang giải. Ghi rõ các lựa chọn đó nếu chúng ảnh hưởng kết quả.
 
