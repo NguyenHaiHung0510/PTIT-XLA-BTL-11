@@ -1,6 +1,6 @@
 """E05 — Lượng tử hóa: chia hệ số theo từng ô và làm tròn."""
 
-from math import copysign, floor
+from math import floor
 
 from demo_io import run, size
 
@@ -18,7 +18,12 @@ LUMA = [
 
 def nearest(value):
     # Giá trị đúng nửa đơn vị làm tròn ra xa 0: ±2.5 -> ±3.
-    return int(copysign(floor(abs(value) + 0.5), value))
+    magnitude = abs(value)
+    whole = floor(magnitude)
+    # So phần lẻ trực tiếp: cộng 0.5 có thể làm float sát dưới tie thành tie.
+    if magnitude - whole >= 0.5:
+        whole += 1
+    return -whole if value < 0 else whole
 
 
 def quantize(coefficients, steps):
