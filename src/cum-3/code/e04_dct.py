@@ -35,7 +35,10 @@ def dct(block):
     if width != height:
         raise ValueError("DCT demo dùng block vuông")
     basis = cosine_basis(width)
-    return multiply(multiply(basis, block), transpose(basis))
+    coefficients = multiply(multiply(basis, block), transpose(basis))
+    # DC = tổng pixel / N; tránh sai số sqrt khiến một tie lượng tử bị lệch.
+    coefficients[0][0] = sum(sum(row) for row in block) / width
+    return coefficients
 
 
 def idct(coefficients):

@@ -43,6 +43,8 @@ JSON dùng số, mảng và object thông thường. Ma trận ảnh có hàng t
 | [h04_error_diffusion_1d.py](code/h04_error_diffusion_1d.py) | Ảnh, ma trận xám JSON hoặc object có `pixels` và `threshold` | So ngưỡng thường với bù lỗi; trace, bỏ lỗi cuối mỗi hàng |
 | [h05_floyd_steinberg.py](code/h05_floyd_steinberg.py) | Như H04 | Trace phân phối lỗi và ảnh nhị phân giữ kích thước |
 
-E02/E03 đọc ảnh thông thường theo từng pixel xám; input JSON có thể chọn block và bảng ký hiệu theo đề. H04/H05 dùng ngưỡng 127 mặc định; bằng ngưỡng cho 255, chỉ gửi lỗi đến pixel chưa xử lý trong ảnh. Báo cáo dài chỉ hiện phần đầu của một số dãy. E09 là demo JPEG giáo dục trên ảnh xám: kiểm hệ số lượng tử qua khâu mã hóa/giải mã, đo sai lệch pixel sau dựng lại. Số bit payload không gồm cây mã/metadata; chương trình không xuất codec `.jpg`.
+E01–E03 chuyển ảnh đầu vào sang xám 8 bit trước khi mã hóa; `round_trip` kiểm các ký hiệu xám đó, không bảo toàn màu hoặc byte của file ảnh. Muốn bảo toàn byte file, đưa file không phải ảnh (ví dụ `.txt`/`.bin`). Với JSON, E02/E03 có thể chọn block và bảng ký hiệu theo đề. `decoded.png` giữ nguyên mức xám; `binary-preview.png` riêng giúp nhìn rõ input 0/1.
+
+H04/H05 dùng ngưỡng 127 mặc định; bằng ngưỡng cho 255, chỉ gửi lỗi đến pixel chưa xử lý trong ảnh. Báo cáo dài chỉ hiện phần đầu của một số dãy. E09 là demo JPEG giáo dục trên ảnh xám: kiểm hệ số lượng tử qua khâu mã hóa/giải mã, đo sai lệch pixel sau dựng lại. DC được tính trực tiếp từ tổng pixel; AC dùng số thực gần đúng. Trace DCT của E09 giữ nguyên hệ số thực sự đưa vào lượng tử. Số bit payload không gồm cây mã/metadata; chương trình không xuất codec `.jpg`.
 
 Đối chiếu: [danh sách bài](../../docs/bai-code.md), [slide C6](../../sources/slides/c6.pdf), [slide C4](../../sources/slides/c4.pdf).

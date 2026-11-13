@@ -130,8 +130,9 @@ def restore_symbols(folder, data, symbols):
     if "pixels" in data:
         width, height = size(data["pixels"])
         pixels = restore_blocks(symbols, width, height, data.get("block", [1, 1]))
-        brightest = 255 if max(flat(data["pixels"])) <= 1 else 1
-        png(folder / "decoded.png", [[v * brightest for v in row] for row in pixels])
+        png(folder / "decoded.png", pixels)
+        if max(flat(pixels)) <= 1:
+            png(folder / "binary-preview.png", [[v * 255 for v in row] for row in pixels])
     elif "bytes" in data:
         (folder / "decoded.bin").write_bytes(bytes(symbols))
 

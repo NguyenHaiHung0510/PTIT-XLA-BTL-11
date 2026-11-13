@@ -4,7 +4,7 @@ from math import sqrt
 
 from demo_io import flat, png, read_gray, run, size
 from e02_huffman import build_tree, code_table, decode as huffman_decode, encode as huffman_encode
-from e04_dct import dct, idct, display
+from e04_dct import dct, idct
 from e05_quantize import LUMA, dequantize, nearest, quantize
 from e06_zigzag import restore, scan
 from e07_dpcm import decode as dc_decode, encode as dc_encode
@@ -79,7 +79,7 @@ def demo(pixels, folder):
             "payload_bits": len(bits), "raw_pixel_bits": width * height * 8,
             "mae": sum(errors) / len(errors),
             "rmse": sqrt(sum(e * e for e in errors) / len(errors)), "max_error": max(errors),
-            "first_block": {"level_shifted": blocks[0], "dct": display(coefficients[0]),
+            "first_block": {"level_shifted": blocks[0], "dct": coefficients[0],
                             "quantized": quantized[0], "zigzag": vectors[0],
                             "dc_difference": differences[0], "ac_rle": pairs[0]}}
 
