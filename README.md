@@ -7,6 +7,7 @@ Nhóm thực hiện các thuật toán trong bài giảng Xử lý ảnh PTIT. M
 - [Ôn thi tự luận](docs/on-thi.md): tra ngược câu hỏi về bài code hoặc phần lý thuyết cần học.
 - [Cách làm việc trên repo](CONTRIBUTING.md).
 - [Slide và ngân hàng câu hỏi](sources/README.md).
+- [Giao diện demo thuật toán](app/README.md): chọn thuật toán, đưa ảnh vào, xem ảnh kết quả (`streamlit run app/main.py`).
 
 Phạm vi đề xuất gồm **45 đầu việc chính + 5 bài chương 4 optional**, dựa trên 7 bộ slide và ghi chú lớp. Cụm 1 có **15 bài**, cụm 2 có **21 bài**, cụm 3 có **9 bài chính + 5 optional**. Ưu tiên RGB↔CMY và khuếch tán lỗi 1D trong phần optional. Các mục bổ sung được liệt kê riêng.
 
